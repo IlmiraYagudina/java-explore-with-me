@@ -18,7 +18,7 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
-public class EventController {
+public class  EventController {
     private final EventService eventService;
 
     @PostMapping("/users/{userId}/events")

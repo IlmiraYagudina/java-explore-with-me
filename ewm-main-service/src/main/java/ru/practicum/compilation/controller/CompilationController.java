@@ -32,6 +32,7 @@ public class CompilationController {
     @DeleteMapping("/admin/compilations/{compId}")
     @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable Long compId) {
+
         service.delete(compId);
     }
 
@@ -44,6 +45,7 @@ public class CompilationController {
 
     @GetMapping("/compilations/{compId}")
     public CompilationDto getById(@PathVariable Long compId) {
+
         return service.getById(compId);
     }
 }
