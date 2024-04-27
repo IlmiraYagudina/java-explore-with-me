@@ -16,12 +16,21 @@ services:
     image: postgres:14-alpine
     container_name: ewm-db
     ports:
-        - "6541:5432"
+        - "5431:5431"
     environment:
-        - POSTGRES_DB=main_database
+        - POSTGRES_DB=statistics
         - POSTGRES_USER=test
         - POSTGRES_PASSWORD=test
 
+  ewm-db:
+    image: postgres:14-alpine
+    container_name: ewm-db
+    ports:
+      - "6541:5432"
+    environment:
+      - POSTGRES_DB=main_database
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
 
   ewm-service:
     container_name: emw-service
