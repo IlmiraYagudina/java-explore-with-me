@@ -21,6 +21,7 @@ public class StatsController {
     @PostMapping("/hit")
     @ResponseStatus(CREATED)
     public EndpointHitDto send(@RequestBody EndpointHitDto endpointHit) {
+
         return service.send(endpointHit);
     }
 
