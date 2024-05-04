@@ -15,7 +15,7 @@ import ru.practicum.enums.State;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.model.Event;
-import ru.practicum.event.model.QEvent;
+import ru.practicum.event.model.QqEvent;
 import ru.practicum.event.repository.EventRepository;
 import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.AccessException;
@@ -192,20 +192,20 @@ public class EventServiceImpl implements EventService {
         BooleanExpression byDate;
         BooleanBuilder builder = new BooleanBuilder();
         if (Objects.nonNull(users)) {
-            byUserId = QEvent.event.initiator.id.in(users);
+            byUserId = QqEvent.event.initiator.id.in(users);
             builder.and(byUserId);
         }
         if (Objects.nonNull(states)) {
             List<State> stateList = Arrays.stream(states).map(State::valueOf).collect(Collectors.toList());
-            byStateId = QEvent.event.state.in(stateList);
+            byStateId = QqEvent.event.state.in(stateList);
             builder.and(byStateId);
         }
         if (Objects.nonNull(rangeStart) || Objects.nonNull(rangeEnd)) {
-            byDate = QEvent.event.eventDate.between(rangeStart, rangeEnd);
+            byDate = QqEvent.event.eventDate.between(rangeStart, rangeEnd);
             builder.and(byDate);
         }
         if (Objects.nonNull(categories)) {
-            byCategoryId = QEvent.event.category.id.in(categories);
+            byCategoryId = QqEvent.event.category.id.in(categories);
             builder.and(byCategoryId);
         }
         List<EventFullDto> events = eventRepository.findAll(builder, page).getContent().stream()
@@ -227,28 +227,28 @@ public class EventServiceImpl implements EventService {
         Iterable<Event> events;
         BooleanBuilder builder = new BooleanBuilder();
         if (Objects.nonNull(text)) {
-            BooleanExpression byAnnotation = QEvent.event.annotation.containsIgnoreCase(text);
-            BooleanExpression byDescription = QEvent.event.description.containsIgnoreCase(text);
+            BooleanExpression byAnnotation = QqEvent.event.annotation.containsIgnoreCase(text);
+            BooleanExpression byDescription = QqEvent.event.description.containsIgnoreCase(text);
             builder.and(byAnnotation).or(byDescription);
         }
         if (Objects.nonNull(paid)) {
-            BooleanExpression byPaid = QEvent.event.paid.eq(paid);
+            BooleanExpression byPaid = QqEvent.event.paid.eq(paid);
             builder.and(byPaid);
         }
         if (Objects.nonNull(categories)) {
             List<Category> categoryList = categoryRepository.findAllByIdIn(Arrays.asList(categories));
-            BooleanExpression byCategories = QEvent.event.category.in(categoryList);
+            BooleanExpression byCategories = QqEvent.event.category.in(categoryList);
             builder.and(byCategories);
         }
         if (Objects.nonNull(rangeStart) || Objects.nonNull(rangeEnd)) {
             if (rangeEnd.isBefore(rangeStart)) {
                 throw new ValidationException("Событие не опубликовано");
             }
-            BooleanExpression byDate = QEvent.event.eventDate.between(rangeStart, rangeEnd);
+            BooleanExpression byDate = QqEvent.event.eventDate.between(rangeStart, rangeEnd);
             builder.and(byDate);
             events = eventRepository.findAll(builder, page);
         } else {
-            BooleanExpression byDate = QEvent.event.eventDate.after(LocalDateTime.now());
+            BooleanExpression byDate = QqEvent.event.eventDate.after(LocalDateTime.now());
             builder.and(byDate);
             events = eventRepository.findAll(builder, page);
         }

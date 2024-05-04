@@ -5,7 +5,7 @@ import com.querydsl.core.types.PathMetadata;
 import com.querydsl.core.types.dsl.*;
 import ru.practicum.enums.State;
 import ru.practicum.event.model.QEvent;
-import ru.practicum.user.model.QUser;
+import ru.practicum.user.model.QqUser;
 
 import javax.annotation.processing.Generated;
 import java.time.LocalDateTime;
@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class QParticipationRequest extends EntityPathBase<ParticipationRequest> {
+public class QqParticipationRequest extends EntityPathBase<ParticipationRequest> {
 
     private static final long serialVersionUID = 1478225225L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final QParticipationRequest participationRequest = new QParticipationRequest("participationRequest");
+    public static final QqParticipationRequest participationRequest = new QqParticipationRequest("participationRequest");
 
     public final DateTimePath<LocalDateTime> created = createDateTime("created", java.time.LocalDateTime.class);
 
@@ -27,30 +27,30 @@ public class QParticipationRequest extends EntityPathBase<ParticipationRequest> 
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final QUser requester;
+    public final QqUser requester;
 
     public final EnumPath<State> status = createEnum("status", ru.practicum.enums.State.class);
 
-    public QParticipationRequest(String variable) {
+    public QqParticipationRequest(String variable) {
         this(ParticipationRequest.class, forVariable(variable), INITS);
     }
 
-    public QParticipationRequest(Path<? extends ParticipationRequest> path) {
+    public QqParticipationRequest(Path<? extends ParticipationRequest> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QParticipationRequest(PathMetadata metadata) {
+    public QqParticipationRequest(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QParticipationRequest(PathMetadata metadata, PathInits inits) {
+    public QqParticipationRequest(PathMetadata metadata, PathInits inits) {
         this(ParticipationRequest.class, metadata, inits);
     }
 
-    public QParticipationRequest(Class<? extends ParticipationRequest> type, PathMetadata metadata, PathInits inits) {
+    public QqParticipationRequest(Class<? extends ParticipationRequest> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.event = inits.isInitialized("event") ? new QEvent(forProperty("event"), inits.get("event")) : null;
-        this.requester = inits.isInitialized("requester") ? new QUser(forProperty("requester")) : null;
+        this.requester = inits.isInitialized("requester") ? new QqUser(forProperty("requester")) : null;
     }
 
 }
