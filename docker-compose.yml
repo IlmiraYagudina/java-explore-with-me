@@ -20,7 +20,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     ports:
-      - "5431:5431"
+      - "5431:5432"
     environment:
       - POSTGRES_DB=statistics
       - POSTGRES_USER=test
@@ -35,7 +35,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     ports:
-      - "6541:5432"
+      - "6531:5432"
     environment:
       - POSTGRES_DB=main_database
       - POSTGRES_USER=test
@@ -54,4 +54,4 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/main_database
       - SPRING_DATASOURCE_USERNAME=test
       - SPRING_DATASOURCE_PASSWORD=test
-      - STAT-SERVICE_URL=http://localhost:9090
+      - STATS-SERVICE_URL=http://localhost:9090
