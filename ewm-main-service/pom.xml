@@ -46,6 +46,12 @@
             <artifactId>dto</artifactId>
             <version>0.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

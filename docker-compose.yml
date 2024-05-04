@@ -12,7 +12,6 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://stats-db:5432/statistics
       - SPRING_DATASOURCE_USERNAME=test
       - SPRING_DATASOURCE_PASSWORD=test
-      - MAIN-SERVICE_URL=http://localhost:8080
 
 
   stats-db:
@@ -26,6 +25,7 @@ services:
       - POSTGRES_DB=statistics
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
+
 
   ewm-db:
     image: postgres:latest
@@ -43,6 +43,7 @@ services:
 
   ewm-service:
     container_name: ewm-service
+
     build: ewm-main-service
     ports:
       - "8080:8080"
@@ -53,4 +54,4 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/main_database
       - SPRING_DATASOURCE_USERNAME=test
       - SPRING_DATASOURCE_PASSWORD=test
-      - STATS-SERVICE_URL=http://localhost:9090
+      - STAT-SERVICE_URL=http://localhost:9090
