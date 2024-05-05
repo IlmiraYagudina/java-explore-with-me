@@ -13,29 +13,21 @@ services:
       - SPRING_DATASOURCE_USERNAME=test
       - SPRING_DATASOURCE_PASSWORD=test
 
-
   stats-db:
     image: postgres:latest
     container_name: stats-db
-    volumes:
-      - /var/lib/postgresql/data/
     ports:
-      - "5431:5432"
+      - "6542:5432"
     environment:
       - POSTGRES_DB=statistics
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
 
-
   ewm-db:
     image: postgres:latest
     container_name: ewm-db
-    expose:
-      - "5432"
-    volumes:
-      - /var/lib/postgresql/data/
     ports:
-      - "6531:5432"
+      - "6541:5432"
     environment:
       - POSTGRES_DB=main_database
       - POSTGRES_USER=test
@@ -43,7 +35,6 @@ services:
 
   ewm-service:
     container_name: ewm-service
-
     build: ewm-main-service
     ports:
       - "8080:8080"
@@ -54,4 +45,4 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/main_database
       - SPRING_DATASOURCE_USERNAME=test
       - SPRING_DATASOURCE_PASSWORD=test
-      - STATS-SERVICE_URL=http://localhost:9090
+      - STATS-SERVICE_URL=http://stats-server:9090
