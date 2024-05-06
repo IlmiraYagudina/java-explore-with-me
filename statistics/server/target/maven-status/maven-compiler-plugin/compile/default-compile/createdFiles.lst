@@ -1,0 +1,9 @@
+ru\practicum\repository\AppRepository.class
+ru\practicum\model\App.class
+ru\practicum\mapper\StatisticsMapper.class
+ru\practicum\mapper\StatisticsMapperImpl.class
+ru\practicum\model\Request.class
+ru\practicum\controller\ServerController.class
+ru\practicum\repository\RequestRepository.class
+ru\practicum\service\StatisticsService.class
+ru\practicum\StatisticServerApp.class
