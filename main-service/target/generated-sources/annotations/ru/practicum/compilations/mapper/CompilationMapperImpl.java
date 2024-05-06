@@ -10,7 +10,7 @@ import ru.practicum.events.mapper.EventMapper;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-05-06T16:11:42+0300",
+    date = "2024-05-06T17:03:10+0300",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 11.0.21 (Amazon.com Inc.)"
 )
 @Component
