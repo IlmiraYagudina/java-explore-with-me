@@ -10,7 +10,6 @@ import ru.practicum.events.entity.enums.StateAction;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -25,7 +24,6 @@ public class EventUpdateDto {
 
     private Long category;
 
-   
     @Size(min = 20, max = 7000)
     private String description;
 
