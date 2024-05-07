@@ -33,9 +33,9 @@ public class CategoryService {
 
         Category category = categoryMapper.newCategoryDtoToCategory(newCategoryDto);
 
-        try {
-            try { category = categoryRepository.save(category);
-
+        try { category = categoryRepository.save(category);
+            try {
+                category = categoryRepository.save(category);
             } catch (DataIntegrityViolationException e) {
                 throw new DataIntegrityViolationException(e.getMessage());
             }
