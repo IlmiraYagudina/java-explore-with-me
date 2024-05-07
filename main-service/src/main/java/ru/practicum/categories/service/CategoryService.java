@@ -34,8 +34,13 @@ public class CategoryService {
         Category category = categoryMapper.newCategoryDtoToCategory(newCategoryDto);
 
         try {
-            category = categoryRepository.save(category);
+            try { category = categoryRepository.save(category);
+
+            } catch (DataIntegrityViolationException e) {
+                throw new DataIntegrityViolationException(e.getMessage());
+            }
         } catch (DataIntegrityViolationException e) {
+
             throw new SQLConstraintViolationException("Category with name = " + newCategoryDto.getName() + " already exists.");
         }
 

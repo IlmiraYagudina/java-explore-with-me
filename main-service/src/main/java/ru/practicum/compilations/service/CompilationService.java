@@ -66,10 +66,14 @@ public class CompilationService {
 
         if (pinned != null) {
             List<Compilation> compilations = compilationRepository.findAllByPinned(pinned, pageable);
-            return compilations.stream().map(compilationMapper::compilationToCompilationDto).collect(Collectors.toList());
+            return compilations.stream()
+                    .map(compilationMapper::compilationToCompilationDto)
+                    .collect(Collectors.toList());
         } else {
             Page<Compilation> compilations = compilationRepository.findAll(pageable);
-            return compilations.stream().map(compilationMapper::compilationToCompilationDto).collect(Collectors.toList());
+            return compilations.stream()
+                    .map(compilationMapper::compilationToCompilationDto)
+                    .collect(Collectors.toList());
         }
     }
 
