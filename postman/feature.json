@@ -58,7 +58,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": \"136\",\n   \"name\": \"user136\",\n    \"email\": \"user136@user.com\"\n}"
+              "raw": "{\n    \"name\": \"user136\",\n    \"email\": \"user136@user.com\"\n}"
             },
             "url": "{{baseUrl}}/admin/users"
           },
@@ -75,6 +75,11 @@
                   "    pm.response.to.have.status(201);",
                   "    pm.response.to.be.withBody;",
                   "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 137').to.eql(137);",
                   "});",
                   "pm.test(\"Test user 'email' field\", function () {",
                   "    var jsonData = pm.response.json();",
@@ -114,7 +119,7 @@
           "response": []
         },
         {
-          "name": "User 138 create",
+          "name": "User 140 create",
           "event": [
             {
               "listen": "test",
@@ -125,15 +130,20 @@
                   "    pm.response.to.be.withBody;",
                   "    pm.response.to.be.json;",
                   "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 140').to.eql(140);",
+                  "});",
                   "pm.test(\"Test user 'email' field\", function () {",
                   "    var jsonData = pm.response.json();",
                   "    pm.expect(jsonData).to.have.property('email');",
-                  "    pm.expect(jsonData.email, '\"email\" must be \"user138@user.com\"').to.eql('user138@user.com');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"user140@user.com\"').to.eql('user140@user.com');",
                   "});",
                   "pm.test(\"Test user 'name' field\", function () {",
                   "    var jsonData = pm.response.json();",
                   "    pm.expect(jsonData).to.have.property('name');",
-                  "    pm.expect(jsonData.name, '\"name\" must be \"user138\"').to.eql('user138');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"user140\"').to.eql('user140');",
                   "});"
                 ],
                 "type": "text/javascript"
@@ -156,7 +166,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"user138\",\n    \"email\": \"user138@user.com\"\n}"
+              "raw": "{\n    \"name\": \"user140\",\n    \"email\": \"user140@user.com\"\n}"
             },
             "url": "{{baseUrl}}/admin/users"
           },
@@ -370,7 +380,7 @@
           "response": []
         },
         {
-          "name": "Event 108 by User 138",
+          "name": "Event 108 by User 140",
           "event": [
             {
               "listen": "prerequest",
@@ -461,7 +471,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "138",
+                  "value": "140",
                   "description": "(Required) current user id"
                 }
               ]
@@ -1083,7 +1093,7 @@
           "response": []
         },
         {
-          "name": "User 138 Event 107 Сomment 4",
+          "name": "User 140 Event 107 Сomment 4",
           "event": [
             {
               "listen": "test",
@@ -1155,7 +1165,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "138"
+                  "value": "140"
                 },
                 {
                   "key": "eventId",
@@ -1167,7 +1177,7 @@
           "response": []
         },
         {
-          "name": "User 138 Event 106 cancelled Comment",
+          "name": "User 140 Event 106 cancelled Comment",
           "event": [
             {
               "listen": "test",
@@ -1224,7 +1234,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "138"
+                  "value": "140"
                 },
                 {
                   "key": "eventId",
@@ -1879,7 +1889,7 @@
           "response": []
         },
         {
-          "name": "Comment 4 Deleted by User 138 for Event 107",
+          "name": "Comment 4 Deleted by User 140 for Event 107",
           "event": [
             {
               "listen": "test",
@@ -1923,7 +1933,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "138"
+                  "value": "140"
                 },
                 {
                   "key": "eventId",
@@ -2006,7 +2016,7 @@
           "response": []
         },
         {
-          "name": "User 138 Comments",
+          "name": "User 140 Comments",
           "event": [
             {
               "listen": "test",
@@ -2051,7 +2061,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "138"
+                  "value": "140"
                 }
               ]
             }
