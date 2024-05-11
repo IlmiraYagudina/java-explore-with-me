@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.3">
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\controller\ServerController.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\mapper\StatisticsMapper.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\model\App.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\model\Request.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\repository\AppRepository.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\repository\RequestRepository.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\service\StatisticsService.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\java\ru\practicum\StatisticServerApp.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\target\generated-sources\annotations\ru\practicum\mapper\StatisticsMapperImpl.java">
+</file>
+<file name="C:\Users\ilmira\PRACTIKUM\java-explore-with-me\statistics\server\src\main\resources\application.properties">
+</file>
+</checkstyle>

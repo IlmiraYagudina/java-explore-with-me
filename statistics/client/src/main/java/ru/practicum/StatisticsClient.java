@@ -21,9 +21,9 @@ public class StatisticsClient {
     }
 
     public ResponseEntity<List<RequestOutDto>> getStats(String start,
-                                                           String end,
-                                                           List<String> uris,
-                                                           Boolean unique) {
+                                                        String end,
+                                                        List<String> uris,
+                                                        Boolean unique) {
 
         return webClient.get()
                 .uri(uriBuilder -> {
@@ -42,10 +42,10 @@ public class StatisticsClient {
     }
 
     public ResponseEntity<List<RequestOutDto>> getStatsByIp(String start,
-                                                               String end,
-                                                               List<String> uris,
-                                                               Boolean unique,
-                                                               String ip) {
+                                                            String end,
+                                                            List<String> uris,
+                                                            Boolean unique,
+                                                            String ip) {
 
         ResponseEntity<List<RequestOutDto>> listResponseEntity = webClient.get()
                 .uri(uriBuilder -> {

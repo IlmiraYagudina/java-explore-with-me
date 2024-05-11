@@ -54,10 +54,10 @@ public class ServerController {
 
     @GetMapping("/statsByIp")
     public ResponseEntity<List<RequestOutDto>> statsByIp(@RequestParam String start,
-                                                            @RequestParam String end,
-                                                            @RequestParam(required = false) List<String> uris,
-                                                            @RequestParam(defaultValue = "false") Boolean unique,
-                                                            @RequestParam String ip) {
+                                                         @RequestParam String end,
+                                                         @RequestParam(required = false) List<String> uris,
+                                                         @RequestParam(defaultValue = "false") Boolean unique,
+                                                         @RequestParam String ip) {
 
 
         LocalDateTime startDT;
