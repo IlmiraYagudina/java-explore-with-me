@@ -8,11 +8,14 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class NewUserDto {
+    @Positive
+    private Long id;
 
     @NotBlank
     @Length(min = 2, max = 250)
